@@ -1,0 +1,48 @@
+{% extends 'default.html' %}
+ 
+{% block title %} Object {% endblock title %}
+ 
+{% block content %}
+<table>
+    <thead>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            House
+        </th>
+        <th>
+            Room
+        </th>
+        <th>
+            Place
+        </th>
+    </thead>
+    <tr>
+        <td>
+            {{ object.name }}
+        </td>
+        <td>
+            {{ object.description }}
+        </td>
+        <td>
+            {{ object.category }}
+        </td>
+        <td>
+            {{ object.place.room.house.name }}
+        </td>
+        <td>
+            {{ object.place.room.name }}
+        </td>
+        <td>
+            {{ object.place.name }}
+        </td>
+    </tr>
+</table>
+{% endblock content %}

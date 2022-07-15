@@ -1,0 +1,12 @@
+{% extends 'default.html' %}
+ 
+{% block title %} Создать объект {% endblock title %}
+ 
+{% block content %}
+<h3>Информация об объекте</h3>
+<form method="POST">
+    {% csrf_token %} 
+    {{ form }}
+    <input type="submit" value="Добавить объект">
+</form>
+{% endblock content %}

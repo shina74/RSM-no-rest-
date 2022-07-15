@@ -1,0 +1,53 @@
+{% extends 'default.html' %}
+ 
+{% block title %} Удаление объекта {% endblock title %}
+ 
+{% block content %}
+<h2>Вы действительно хотите удалить данный объект?</h2>
+<table>
+    <thead>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            House
+        </th>
+        <th>
+            Room
+        </th>
+        <th>
+            Place
+        </th>
+    </thead>
+    <tr>
+        <td>
+            {{ object.name}}
+        </td>
+        <td>
+            {{ object.description }}
+        </td>
+        <td>
+            {{ object.category }}
+        </td>
+        <td>
+            {{ object.place.room.house }}
+        </td>
+        <td>
+            {{ object.place.room }}
+        </td>
+        <td>
+            {{ object.place }}
+        </td>
+    </tr>
+</table>
+ 
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="подтвердить"></form>
+{% endblock content %} 
